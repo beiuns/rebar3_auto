@@ -97,7 +97,7 @@ auto() ->
                             flush(),
 			    cowboy:stop_listener(my_http_listener),
                             rebar_agent:do(compile),
-			    intuitive_app:start("A", "B").
+			    intuitive_app:start("A", "B")
                     end;
                 _ -> pass
             end
