@@ -95,7 +95,9 @@ auto() ->
                             % or we can flush after compile?
                             timer:sleep(200),
                             flush(),
-                            rebar_agent:do(compile)
+			    cowboy:stop_listener(my_http_listener),
+                            rebar_agent:do(compile),
+			    intuitive_app:start("A", "B").
                     end;
                 _ -> pass
             end
